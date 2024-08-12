@@ -15,6 +15,11 @@ body {
     background-color: transparent;
 }
 
+p {
+    font-size: 50px;
+    text-align: center;
+}
+
 
 .tiles-section {
     display: flex;
@@ -55,5 +60,41 @@ body {
     .tile {
         width: 100%;
         margin-bottom: 20px;
+    }
+}
+
+.grid-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 40px; /* Отступ между секциями */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 столбца */
+    gap: 20px; /* Отступы между плитками */
+    max-width: 1200px;
+    margin: 0 auto; /* Центрирование контейнера */
+}
+
+.grid-tile {
+    background-color: #c0c0c0;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+}
+
+/* Адаптация на меньших экранах */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 столбца на планшетах */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 столбец на мобильных устройствах */
     }
 }
